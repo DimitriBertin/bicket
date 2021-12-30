@@ -4,8 +4,7 @@
     @if getUnit($value) == pt {
         @return $value;
     }
-    $valRem: math($value, 16); 
-    @return  $valRem + rem;
+    @return ($value / 16) + rem;
 }
 
 @mixin shadow {
