@@ -2,14 +2,9 @@
 @import './../mixins.scss';
 
 .block {
-  padding: toRem(60) 0;
-
-  .container {
-    @include container;
-  }
-
   .title {
     @include title;
+    
     a {
       position: relative;
       text-decoration: none;

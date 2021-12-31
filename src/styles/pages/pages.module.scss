@@ -1,0 +1,8 @@
+@import './../core.scss';
+@import './../mixins.scss';
+
+.block {
+  .title {
+    @include title;
+  }
+}
