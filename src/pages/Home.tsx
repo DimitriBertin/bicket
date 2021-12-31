@@ -12,7 +12,7 @@ export default function Home() {
       <div className={style.container}>
         <h1 className={style.title}>
           Welcome on board, <br />
-          <Link to="/update-profile">Dimitri Bertin</Link>
+          <Link to="/profile">Dimitri Bertin</Link>
         </h1>
         <p className={style.description}>
           Vous êtes connecté, vous pouvez ajouter des <b>collaborateurs</b> pour vous aider dans votre tâche. Vous

@@ -1,1 +1,6 @@
 export { default as Home } from './Home'
+export { default as Settings } from './Settings'
+export { default as Users } from './Users'
+export { default as Pages } from './Pages'
+export { default as Blocks } from './Blocks'
+export { default as Profile } from './Profile'
