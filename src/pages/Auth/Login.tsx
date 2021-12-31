@@ -2,7 +2,7 @@ import { Field, SubmitButton } from 'components'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import style from 'styles/login.module.scss'
+import style from 'styles/pages/login.module.scss'
 import { setFirebaseError } from 'services/firebase'
 
 export default function Login() {

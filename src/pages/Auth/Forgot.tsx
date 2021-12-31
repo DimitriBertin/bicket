@@ -1,6 +1,6 @@
 import { Field, SubmitButton } from 'components'
 import { Link } from 'react-router-dom'
-import style from 'styles/login.module.scss'
+import style from 'styles/pages/login.module.scss'
 
 export default function Forgot() {
   return (

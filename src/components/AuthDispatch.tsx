@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ActionName, ThemeContext } from 'contextes/themes'
 import { BiLoaderAlt } from 'react-icons/bi'
-import style from 'styles/auth.module.scss'
+import style from 'styles/pages/auth.module.scss'
 
 function AuthDispatch() {
   const [isLoading, setLoading] = useState(true)
@@ -24,7 +24,13 @@ function AuthDispatch() {
           type: ActionName.UPDATE,
           payload: {
             isLogged: true,
-            user,
+            user: {
+              uid: user.uid,
+              email: user.email,
+              photoURL: user.photoURL,
+              displayName: user.displayName,
+              phoneNumber: user.phoneNumber,
+            },
           },
         })
       } else {

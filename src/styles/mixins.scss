@@ -11,10 +11,6 @@
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.15);
 }
 
-@mixin container {
-  padding: 0px toRem(40);
-}
-
 // MAX
 @mixin mobile {
   @media(max-width: $mobile) {
@@ -47,4 +43,17 @@
   @media(min-width: $val) {
     @content;
   }
+}
+
+@mixin container {
+  max-width: calc(10 / 12 * 100%);
+  margin-left: calc(1 / 12 * 100%);
+}
+
+//
+@mixin title {
+  margin: 0;
+  font-family: $fontTitle;
+  font-size: toRem(62);
+  color: $blue--grey;
 }

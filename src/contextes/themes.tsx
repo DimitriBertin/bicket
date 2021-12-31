@@ -10,6 +10,10 @@ export type ThemeType = {
   isLogged: boolean
   user: {
     uid: string
+    email: string
+    photoURL: string
+    displayName: string
+    phoneNumber: string
   }
 }
 
@@ -30,6 +34,10 @@ export const defaultTheme: ThemeType = {
   isLogged: false,
   user: {
     uid: null,
+    email: '',
+    photoURL: '',
+    phoneNumber: '',
+    displayName: '',
   },
 }
 
