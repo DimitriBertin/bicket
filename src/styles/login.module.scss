@@ -64,4 +64,12 @@
     position: absolute;
     bottom: toRem(40);
   }
+
+  .error {
+    color: red;
+    font-size: toRem(12);
+    margin: 0;
+    padding: toRem(5) 0 toRem(5) toRem(10);
+    border-left: 4px solid red;
+  }
 }
