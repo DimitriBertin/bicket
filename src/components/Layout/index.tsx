@@ -1,7 +1,8 @@
 import style from './style.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { Menu } from 'components'
+import { useLocation } from 'react-router-dom'
 
 type Props = {
   children: React.ReactChild | React.ReactChild[]
@@ -9,6 +10,11 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   const [isOpen, setOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
 
   return (
     <div className={style.block}>

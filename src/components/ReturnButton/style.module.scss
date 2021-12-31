@@ -1,0 +1,17 @@
+@import 'styles/mixins.scss';
+@import 'styles/core.scss';
+
+.block {
+  margin-bottom: toRem(20);
+
+  a {
+    color: $blue--grey;
+    text-decoration: none;
+    font-size: toRem(14);
+    opacity: 0.5;
+    
+    svg {
+      margin-right: toRem(5);
+    } 
+  }
+}
