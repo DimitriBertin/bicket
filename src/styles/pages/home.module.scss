@@ -39,4 +39,57 @@
       }
     }
   }
+
+  .description {
+    margin-top: toRem(50);
+    color: $grey;
+    line-height: 2;
+    max-width: toRem(660);
+  }
+
+  .menu {
+    margin: toRem(20) 0;
+
+    ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+
+      li {
+        margin-right: toRem(40);
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: toRem(10);
+        text-decoration: none;
+        color: $blue--grey;
+        font-size: toRem(18);
+        border: 1px solid rgba($blue--grey, 0.2);
+        border-radius: toRem(8);
+        width: toRem(160);
+        height: toRem(120);
+        transition: all .6s ease;
+
+        svg {
+          width: toRem(22);
+          height: toRem(22);
+          margin-bottom: toRem(10);
+          opacity: 0.5;
+          transition: all .3s;
+        }
+
+        &:hover {
+          @include shadow;
+
+          svg {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
