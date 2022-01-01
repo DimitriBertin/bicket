@@ -12,6 +12,7 @@ export default function AppRoutes() {
         <Route path="/blocks" element={<RouteComponent.Blocks />} />
         <Route path="/settings" element={<RouteComponent.Settings />} />
         <Route path="/users" element={<RouteComponent.Users />} />
+        <Route path="/blog" element={<RouteComponent.Blog />} />
       </Routes>
     </Layout>
   )

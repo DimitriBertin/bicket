@@ -16,6 +16,11 @@ export default function Menu() {
         </Link>
       </li>
       <li>
+        <Link to="/blog">
+          <AiOutlineUser /> Blog
+        </Link>
+      </li>
+      <li>
         <Link to="/users">
           <AiOutlineUser /> Collaborateurs
         </Link>
