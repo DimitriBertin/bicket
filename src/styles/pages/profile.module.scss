@@ -1,0 +1,58 @@
+@import './../core.scss';
+@import './../mixins.scss';
+
+.block {
+  text-align: center;
+  
+  .title {
+    @include title;
+  }
+
+  .description {
+    font-size: toRem(14);
+    line-height: 2;
+    color: $grey;
+    max-width: toRem(440);
+    margin: toRem(20) auto 0;
+  }
+  
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: toRem(40) 0;
+    position: relative;
+  }
+
+  .photo {
+    width: toRem(120);
+    height: toRem(120);
+    border: 2px dashed rgba($blue--grey, 0.2);
+  }
+
+  .fields {
+    width: toRem(360);
+    display: grid;
+    grid-row-gap: toRem(10);
+    margin-left: toRem(20);
+    position: relative;
+    z-index: 1;
+  }
+
+  .newpass {
+    justify-self: left;
+    font-size: toRem(12);
+    border: 0;
+    background: rgba($blue--grey, 0.5);
+    padding: 10px 20px;
+    width: auto;
+    text-align: left;
+    color: white;
+  }
+  
+  .success {
+    position: relative;
+    font-size: toRem(12);
+    color: $green;
+  }
+}

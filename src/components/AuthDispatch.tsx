@@ -20,6 +20,7 @@ function AuthDispatch() {
     const auth = getAuth()
     onAuthStateChanged(auth, (user) => {
       if (user) {
+        console.log(user)
         dispatch({
           type: ActionName.UPDATE,
           payload: {
@@ -30,6 +31,7 @@ function AuthDispatch() {
               photoURL: user.photoURL,
               displayName: user.displayName,
               phoneNumber: user.phoneNumber,
+              emailVerified: user.emailVerified,
             },
           },
         })
