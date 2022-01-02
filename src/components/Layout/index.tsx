@@ -19,7 +19,11 @@ export default function Layout({ children }: Props) {
   return (
     <div className={style.block}>
       <header>
-        <button type="button" className={style.menuButton} onClick={() => setOpen(!isOpen)}>
+        <button
+          type="button"
+          className={clsx(style.menuButton, isOpen && style.isClose)}
+          onClick={() => setOpen(!isOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>
