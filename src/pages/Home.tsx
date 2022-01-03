@@ -3,6 +3,7 @@ import { ThemeContext } from 'contextes/themes'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import style from 'styles/pages/home.module.scss'
+import { FiEdit } from 'react-icons/fi'
 
 export default function Home() {
   const {
@@ -12,7 +13,12 @@ export default function Home() {
     <div className={style.block}>
       <h1 className={style.title}>
         Welcome on board, <br />
-        <Link to="/profile">{user.displayName}</Link>
+        <Link to="/profile">
+          {user.displayName}
+          <span className={style.icon}>
+            <FiEdit />
+          </span>
+        </Link>
       </h1>
       <p className={style.description}>
         Vous êtes connecté, vous pouvez ajouter des <b>collaborateurs</b> pour vous aider dans votre tâche. Vous pouvez

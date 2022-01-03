@@ -62,7 +62,7 @@
     height: 100%;
     z-index: 9;
     padding: toRem(40);
-    background: rgba($blue--grey, 0.95);
+    background: $blue--grey;
     transition: all .3s ease;
     display: none;
     align-items: center;
@@ -73,21 +73,26 @@
 
     ul {
       list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+
       li {
-        margin-bottom: toRem(20);
+        margin-bottom: toRem(40);
+        margin-right: toRem(60);
       }
 
       a {
         position: relative;
-        font-size: toRem(32);
+        font-size: toRem(42);
         color: white;
         text-decoration: none;
 
         svg {
-          width: toRem(24);
-          height: toRem(24);
-          margin-right: toRem(10);
-          opacity: 0.5;
+          width: toRem(28);
+          height: toRem(28);
+          margin-right: toRem(5);
+          opacity: 0.75;
         }
 
         &:after {
