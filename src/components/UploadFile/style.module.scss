@@ -1,0 +1,16 @@
+@import 'styles/mixins.scss';
+@import 'styles/core.scss';
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: toRem(40) 0;
+
+  .photo {
+    width: toRem(120);
+    height: toRem(120);
+    border: 2px dashed rgba($blue--grey, 0.2);
+    border-radius: 50%;
+  }
+}

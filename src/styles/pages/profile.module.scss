@@ -15,28 +15,6 @@
     max-width: toRem(440);
     margin: toRem(20) auto 0;
   }
-  
-  .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: toRem(40) 0;
-    position: relative;
-  }
-
-  .wrapPhoto {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: toRem(40) 0;
-  }
-
-  .photo {
-    width: toRem(120);
-    height: toRem(120);
-    border: 2px dashed rgba($blue--grey, 0.2);
-    border-radius: 50%;
-  }
 
   .fields {
     width: toRem(360);
@@ -62,5 +40,31 @@
     position: relative;
     font-size: toRem(12);
     color: $green;
+  }
+
+  .head {
+    margin: toRem(40) 0;
+  }
+
+  .displayName {
+    margin: 0;
+    color: $blue--grey;
+    font-size: toRem(26);
+  }
+
+  .role {
+    margin: 0;
+    color: $primary;
+    font-size: toRem(16);
+  }
+
+  .smallButton {
+    background: none;
+    border: 0;
+    font-size: toRem(12);
+    color: $grey--light;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 }

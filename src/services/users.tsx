@@ -1,4 +1,5 @@
 import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore'
+import { BsEye, BsShieldLock, BsPen } from 'react-icons/bs'
 
 export async function getUser(uid: string) {
   const db = getFirestore()
@@ -10,4 +11,30 @@ export async function getUser(uid: string) {
   })
 
   return user
+}
+
+export function setRoleView(role) {
+  if (role === 'A') {
+    return (
+      <>
+        <BsShieldLock /> Administrateur
+      </>
+    )
+  }
+
+  if (role === 'C') {
+    return (
+      <>
+        <BsPen /> Contributeur
+      </>
+    )
+  }
+
+  if (role === 'R') {
+    return (
+      <>
+        <BsEye /> Reader
+      </>
+    )
+  }
 }
