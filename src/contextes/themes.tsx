@@ -10,10 +10,13 @@ export type ThemeType = {
   isLogged: boolean
   user: {
     uid: string
+    name: string
+    lastname: string
+    role: string
+    date: string
     email: string
     photoURL: string
     displayName: string
-    phoneNumber: string
     emailVerified: boolean
   }
 }
@@ -38,8 +41,11 @@ export const defaultTheme: ThemeType = {
     email: '',
     emailVerified: false,
     photoURL: '',
-    phoneNumber: '',
     displayName: '',
+    name: '',
+    lastname: '',
+    role: '',
+    date: '',
   },
 }
 

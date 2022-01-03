@@ -6,10 +6,10 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ActionName, ThemeContext } from 'contextes/themes'
 import { BiLoaderAlt } from 'react-icons/bi'
 import style from 'styles/pages/auth.module.scss'
+import { getUser } from 'services/users'
 
 function AuthDispatch() {
   const [isLoading, setLoading] = useState(true)
-
   const {
     dispatch,
     state: { isLogged },
@@ -18,9 +18,10 @@ function AuthDispatch() {
 
   useEffect(() => {
     const auth = getAuth()
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
+      setLoading(false)
       if (user) {
-        console.log(user)
+        const dataUser = await getUser(user.uid)
         dispatch({
           type: ActionName.UPDATE,
           payload: {
@@ -28,21 +29,19 @@ function AuthDispatch() {
             user: {
               uid: user.uid,
               email: user.email,
+              emailVerified: user.emailVerified,
               photoURL: user.photoURL,
               displayName: user.displayName,
-              phoneNumber: user.phoneNumber,
-              emailVerified: user.emailVerified,
+              name: dataUser.name,
+              lastname: dataUser.lastname,
+              role: dataUser.role,
+              date: dataUser.date,
             },
           },
         })
       } else {
-        // setLogged(false)
-        dispatch({
-          type: ActionName.LOGOUT,
-        })
         navigate('/signin')
       }
-      setLoading(false)
     })
   }, [])
 

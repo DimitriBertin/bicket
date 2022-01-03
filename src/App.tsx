@@ -20,7 +20,6 @@ const app = initializeApp(firebaseConfig)
 
 function App() {
   useEffect(() => {
-    console.log('app', app)
     getAnalytics(app)
   }, [])
 

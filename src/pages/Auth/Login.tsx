@@ -15,10 +15,7 @@ export default function Login() {
     setError(null)
     const auth = getAuth()
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password)
-      if (userCredential) {
-        // console.log('USER CREDENTIAL', userCredential)
-      }
+      await signInWithEmailAndPassword(auth, email, password)
     } catch (error) {
       setError(setFirebaseError(error.code))
     }
