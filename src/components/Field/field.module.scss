@@ -2,12 +2,37 @@
 @import 'styles/core.scss';
 
 .block {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: toRem(20);
+    transition: all .3s ease;
+    transform: translateY(-50%);
+    font-size: toRem(14);
+    color: rgba($blue--grey, 0.8);
+  }
+
   input {
     width: 100%;
-    border-radius: 0;
-    border: 1px solid $blue--grey;
-    height: toRem(40);
-    background: white;
+    border-radius: toRem(8);
+    border: 0;
+    height: toRem(50);
+    background: rgba($blue--grey, 0.1);
     padding: 0px toRem(20);
+    font-size: toRem(14);
+
+    &:focus {
+      outline: 1px solid $blue--grey;
+    }
+  }
+
+  &.isFill {
+    label {
+      color: rgba($blue--grey, 0.5);
+      transform-origin: center left;
+      transform: translateY(-50%) scale(0.7) translateY(-22px);
+    }
   }
 }

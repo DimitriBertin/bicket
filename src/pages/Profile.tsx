@@ -1,7 +1,7 @@
-import { SubmitButton, UploadFile } from 'components'
+import { FormProfil } from 'components'
 import ReturnButton from 'components/ReturnButton'
 import { ThemeContext } from 'contextes/themes'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import style from 'styles/pages/profile.module.scss'
 import { setRoleView } from 'services/users'
 
@@ -9,17 +9,6 @@ export default function Profile() {
   const {
     state: { user },
   } = useContext(ThemeContext)
-
-  const [userData, setUserData] = useState({
-    email: '',
-    password: '',
-    confirm: '',
-    displayName: '',
-  })
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-  }
 
   return (
     <div className={style.block}>
@@ -35,11 +24,7 @@ export default function Profile() {
         )}
       </div>
       <div className={style.wrapper}>
-        <form onSubmit={handleSubmit}>
-          {/* FILE UPLOAD COMPONENT */}
-          <UploadFile />
-          <SubmitButton align="center">Modifier mon profil</SubmitButton>
-        </form>
+        <FormProfil />
       </div>
     </div>
   )

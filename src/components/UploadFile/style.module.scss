@@ -2,15 +2,41 @@
 @import 'styles/core.scss';
 
 .block {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: toRem(40) 0;
+  // margin: toRem(40) 0;
 
   .photo {
+    position: relative;
     width: toRem(120);
     height: toRem(120);
     border: 2px dashed rgba($blue--grey, 0.2);
     border-radius: 50%;
+    overflow: hidden;
+    font-size: toRem(22);
+    color: $blue--grey;
+    transition: all .3s ease;
+
+    &:hover {
+      background: rgba($blue--grey, 0.1);
+
+      svg {
+        transform: translate(-50%, -50%) scale(1.5) ;
+      }
+    }
+  }
+
+  input {
+    @include sr-only;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease;
   }
 }
