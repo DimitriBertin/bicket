@@ -1,7 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import Auth from 'pages/Auth'
 import AppRoutes from './AppRoutes'
-import { useNavigate } from 'react-router-dom'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import { ActionName, ThemeContext } from 'contextes/themes'
 import { BiLoaderAlt } from 'react-icons/bi'
@@ -14,12 +13,11 @@ function AuthDispatch() {
     dispatch,
     state: { isLogged },
   } = useContext(ThemeContext)
-  const navigate = useNavigate()
+
+  const auth = getAuth()
 
   useEffect(() => {
-    const auth = getAuth()
     onAuthStateChanged(auth, async (user) => {
-      setLoading(false)
       if (user) {
         const dataUser = await getUser(user.uid)
         dispatch({
@@ -39,9 +37,8 @@ function AuthDispatch() {
             },
           },
         })
-      } else {
-        navigate('/signin')
       }
+      setLoading(false)
     })
   }, [])
 

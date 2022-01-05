@@ -1,21 +1,48 @@
 import { Field, SubmitButton } from 'components'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { useContext, useState } from 'react'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import style from 'styles/pages/login.module.scss'
 import { setFirebaseError } from 'services/firebase'
+import { getUser } from 'services/users'
+import { ActionName, ThemeContext } from 'contextes/themes'
 
 export default function Login() {
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
+  const auth = getAuth()
+  const { dispatch } = useContext(ThemeContext)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError(null)
-    const auth = getAuth()
+
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      const credential = await signInWithEmailAndPassword(auth, email, password)
+      if (credential) {
+        const { user } = credential
+        const dataUser = await getUser(user.uid)
+        dispatch({
+          type: ActionName.UPDATE,
+          payload: {
+            isLogged: true,
+            user: {
+              uid: user.uid,
+              email: user.email,
+              emailVerified: user.emailVerified,
+              photoURL: user.photoURL,
+              displayName: user.displayName,
+              name: dataUser.name,
+              lastname: dataUser.lastname,
+              role: dataUser.role,
+              date: dataUser.date,
+            },
+          },
+        })
+        navigate('/')
+      }
     } catch (error) {
       setError(setFirebaseError(error.code))
     }

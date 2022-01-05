@@ -1,4 +1,4 @@
-import { Menu } from 'components'
+import { MenuList } from 'components'
 import { ThemeContext } from 'contextes/themes'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -27,7 +27,7 @@ export default function Home() {
         Bonne navigation !
       </p>
       <div className={style.menu}>
-        <Menu />
+        <MenuList />
       </div>
     </div>
   )

@@ -1,35 +1,43 @@
 import style from './style.module.scss'
-import { useEffect, useState } from 'react'
-import clsx from 'clsx'
-import { Menu } from 'components'
-import { useLocation } from 'react-router-dom'
+import Menu from './Menu'
+import Notification from './Notification'
+import { AiOutlineLogout } from 'react-icons/ai'
+import { getAuth, signOut } from 'firebase/auth'
+import { useContext } from 'react'
+import { ActionName, ThemeContext } from 'contextes/themes'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {
   children: React.ReactChild | React.ReactChild[]
 }
 
 export default function Layout({ children }: Props) {
-  const [isOpen, setOpen] = useState(false)
-  const location = useLocation()
-
-  useEffect(() => {
-    setOpen(false)
-  }, [location.pathname])
+  const { dispatch } = useContext(ThemeContext)
+  const navigate = useNavigate()
+  const handLogout = () => {
+    const auth = getAuth()
+    signOut(auth)
+      .then(() => {
+        dispatch({
+          type: ActionName.LOGOUT,
+        })
+        navigate('/signin')
+      })
+      .catch((e) => {
+        console.log(`Something wrong ---->`, e)
+      })
+  }
 
   return (
     <div className={style.block}>
-      <header>
-        <button
-          type="button"
-          className={clsx(style.menuButton, isOpen && style.isClose)}
-          onClick={() => setOpen(!isOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div className={clsx(style.menu, isOpen && style.isOpen)}>
-          <Menu />
+      <header className={style.header}>
+        <Menu />
+        <div className={style.headerRight}>
+          <Notification />
+          <button type="button" className={style.logout} onClick={handLogout}>
+            <AiOutlineLogout />
+            <span>GoodBye.</span>
+          </button>
         </div>
       </header>
       <main className={style.container}>{children}</main>

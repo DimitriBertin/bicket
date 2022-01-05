@@ -4,7 +4,7 @@ import { IoExtensionPuzzleOutline, IoDocumentTextOutline, IoMenu } from 'react-i
 import { FiUsers, FiSun } from 'react-icons/fi'
 import { GoLink } from 'react-icons/go'
 
-export default function Menu() {
+export default function MenuList() {
   return (
     <ul>
       <li>
