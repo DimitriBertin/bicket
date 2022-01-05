@@ -5,4 +5,45 @@
   .title {
     @include title;
   }
+
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr 1fr;
+      align-items: center;
+      padding: toRem(10);
+      font-size: toRem(14);
+      color: $blue--grey;
+      border-radius: toRem(8);
+
+      &:hover {
+        @include shadow;
+      }
+    }
+  }
+
+  .avatar {
+    width: toRem(48);
+    height: toRem(48);
+    border-radius: 50%;
+    border: 1px dashed $grey;
+  }
+
+  .role {
+    justify-self: flex-end;
+    font-size: toRem(12);
+    color: $primary;
+  }
 }

@@ -1,0 +1,57 @@
+@import 'styles/mixins.scss';
+@import 'styles/core.scss';
+
+.block {
+  position: relative;
+  margin: toRem(20) 0;
+  
+  form {
+    position: relative;
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: toRem(20);
+    font-size: toRem(14);
+    color: $blue--grey;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+  }
+
+  input {
+    width: 100%;
+    height: toRem(60);
+    border: 0;
+    background: rgba($blue--grey, 0.1);
+    border-radius: toRem(8);
+    padding-left: toRem(20);
+    padding-right: toRem(100); 
+
+    &:focus {
+      outline: 1px solid $blue--grey;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0 toRem(20);
+    color: $blue--grey;
+    font-size: toRem(16);
+    background: transparent;
+  }
+
+  &.isFill {
+    label {
+      transform: translateY(-50px);
+    }
+  }
+}

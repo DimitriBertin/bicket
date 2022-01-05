@@ -40,7 +40,13 @@ export function setRoleView(role) {
   }
 }
 
-export function getListUsers() {
-  const auth = getAuth()
-  console.log(auth)
+export async function getListUsers() {
+  const db = getFirestore()
+  const querySnapshot = await getDocs(collection(db, 'users'))
+  const users = []
+  querySnapshot.forEach((doc) => {
+    users.push(doc.data())
+  })
+
+  return users
 }

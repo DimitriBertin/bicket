@@ -1,0 +1,39 @@
+@import 'styles/mixins.scss';
+@import 'styles/core.scss';
+
+.button {
+  position: relative;
+  background: $blue--grey;
+  color: white;
+  border-radius: toRem(22);
+  text-decoration: none;
+  padding: toRem(10) toRem(20) toRem(10) toRem(40);
+  transition: all .3s;
+
+  &:before {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: toRem(10);
+    width: toRem(20);
+    height: toRem(20);
+    line-height: toRem(20);
+    background: white;
+    color: $blue--grey;
+    font-size: toRem(16);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    background: $primary;
+
+    &:before {
+      transform: translateY(-50%) rotate(-180deg);
+      color: $primary;
+    }
+  }
+}
