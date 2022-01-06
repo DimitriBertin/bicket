@@ -1,0 +1,19 @@
+@import 'styles/mixins.scss';
+@import 'styles/core.scss';
+
+.block {
+  color: $blue--grey;
+  font-size: toRem(12);
+  border-radius: 0;
+  border: 0;
+  border-radius: toRem(22);
+  padding: toRem(10) toRem(20);
+  background: rgba($primary, 0.1);
+  transition: all .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($primary, 1);
+    color: white;
+  }
+}

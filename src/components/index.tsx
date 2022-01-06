@@ -3,6 +3,7 @@ export { default as AppRoutes } from './AppRoutes'
 
 export { default as SubmitButton } from './SubmitButton'
 export { default as ReturnButton } from './ReturnButton'
+export { default as smallButton } from './SmallButton'
 export { default as AddButton } from './AddButton'
 export { default as Field } from './Field'
 export { default as UploadFile } from './UploadFile'

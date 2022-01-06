@@ -3,13 +3,13 @@
 
 .block {
   display: grid;
-  grid-row-gap: toRem(20);
+  grid-row-gap: toRem(10);
   margin: 0px auto;
   max-width: toRem(480);
 
   .pass {
     display: grid;
-    grid-row-gap: toRem(20);
+    grid-row-gap: toRem(10);
     
     p {
       font-size: toRem(14);
@@ -32,5 +32,12 @@
     padding: toRem(10) toRem(20);
     // border-bottom: 1px solid rgba($blue--grey, 0.5);
     background: rgba($primary, 0.1);
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba($primary, 1);
+      color: white;
+    }
   }
 }

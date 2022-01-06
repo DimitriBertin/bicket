@@ -50,3 +50,7 @@ export async function getListUsers() {
 
   return users
 }
+
+export async function updateProfil(data) {
+  
+}

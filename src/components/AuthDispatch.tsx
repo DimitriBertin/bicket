@@ -26,14 +26,14 @@ function AuthDispatch() {
             isLogged: true,
             user: {
               uid: user.uid,
-              email: user.email,
-              emailVerified: user.emailVerified,
-              photoURL: user.photoURL,
-              displayName: user.displayName,
+              email: dataUser.email,
+              avatar: dataUser.avatar,
+              displayName: dataUser.displayName,
               name: dataUser.name,
               lastname: dataUser.lastname,
               role: dataUser.role,
               date: dataUser.date,
+              phone: dataUser.phone,
             },
           },
         })

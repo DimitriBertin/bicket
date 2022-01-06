@@ -15,9 +15,9 @@ export type ThemeType = {
     role: string
     date: string
     email: string
-    photoURL: string
+    avatar: string
     displayName: string
-    emailVerified: boolean
+    phone: string
   }
 }
 
@@ -39,13 +39,13 @@ export const defaultTheme: ThemeType = {
   user: {
     uid: null,
     email: '',
-    emailVerified: false,
-    photoURL: '',
+    avatar: '',
     displayName: '',
     name: '',
     lastname: '',
     role: '',
     date: '',
+    phone: '',
   },
 }
 
